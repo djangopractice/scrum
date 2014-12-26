@@ -33,7 +33,7 @@ class SprintSerializer(serializers.ModelSerializer):
 
     def get_links(self, obj):
         request = self.context['request']
-        return {'self': reverse('sprint-detail', kwargs={'pk': obj.ok}, request=request), }
+        return {'self': reverse('sprint-detail', kwargs={'pk': obj.pk}, request=request), }
 
 
 class TaskSerializer(serializers.ModelSerializer):
@@ -54,7 +54,7 @@ class TaskSerializer(serializers.ModelSerializer):
     def get_links(self, obj):
         request = self.context['request']
         links = {
-            'self': reverse('task-detail', kwargs={'pk': obj.ok}, request=request),
+            'self': reverse('task-detail', kwargs={'pk': obj.pk}, request=request),
             'sprint': None,
             'assigned': None
         }
