@@ -1,6 +1,6 @@
 import django_filters
 from django.contrib.auth import get_user_model
-from .models import Task
+from .models import Task, Sprint
 
 
 User = get_user_model()
@@ -26,3 +26,12 @@ class TaskFilter(django_filters.FilterSet):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.filters['assigned'].extra.update({'to_field_name': User.USERNAME_FIELD})
+
+
+class SprintFilter(django_filters.FilterSet):
+    end_min = django_filters.DateFilter(name='end', lookup_type='gte')
+    end_max = django_filters.DateFilter(name='end', lookup_type='lte')
+
+    class Meta:
+        model = Sprint
+        fields = ('end_min', 'end_max', )
