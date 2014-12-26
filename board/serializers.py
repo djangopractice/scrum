@@ -40,13 +40,13 @@ class TaskSerializer(serializers.ModelSerializer):
 
     assigned = serializers.SlugRelatedField(slug_field=User.USERNAME_FIELD, required=False,
                                             read_only=True)
-    status_display = serializers.SerializerMethodField('get_status_display')
+    status_display = serializers.SerializerMethodField()
     links = serializers.SerializerMethodField()
 
     class Meta:
         model = Task
-        fields = ('id', 'name', 'description', 'sprint', 'status', 'order', 'assigned', 'started',
-                  'due', 'completed', 'links', )
+        fields = ('id', 'name', 'description', 'sprint', 'status_display', 'order', 'assigned',
+                  'started', 'due', 'completed', 'links', )
 
     def get_status_display(self, obj):
         return obj.get_status_display()
