@@ -1,7 +1,7 @@
 scrum
 =====
 
-While reading [Lightweight Django by Julia Elman and Mark Lavin (O’Reilly). Copyright 2014 Julia Elman and Mark Lavin. 978-1-4919-4594-0.](http://www.amazon.com/Lightweight-Django-Julia-Elman/dp/149194594X/) I coded the "scrum" example and saved here for personal reference.
+While reading [Lightweight Django by Julia Elman and Mark Lavin (O’Reilly). Copyright 2014 Julia Elman and Mark Lavin. 978-1-4919-4594-0.](http://www.amazon.com/Lightweight-Django-Julia-Elman/dp/149194594X/) I coded the "scrum" example for practice and saved here for reference.
 
 # Terms and Conditions #
 
