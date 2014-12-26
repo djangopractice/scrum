@@ -43,7 +43,7 @@ class TaskViewSet(DefaultsMixin, viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     filter_class = TaskFilter
     search_fields = ('name', 'description', )
-    ordering_fields = ('name', 'order', 'started', 'due', 'completed', )
+    ordering_fields = ('name', 'order', 'started', 'due', 'completed',  )
 
 
 class UserViewSet(DefaultsMixin, viewsets.ReadOnlyModelViewSet):
