@@ -36,11 +36,13 @@ INSTALLED_APPS = (
     # Third party apps
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     # Internal apps
     'board',
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -50,6 +52,8 @@ ROOT_URLCONF = 'scrum.urls'
 
 WSGI_APPLICATION = 'scrum.wsgi.application'
 
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_REGEX_WHITELIST = ('^(https?://)?(\w+\.)?localhost(:[0-9]+)?$', )
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
