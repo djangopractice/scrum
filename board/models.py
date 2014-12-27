@@ -8,7 +8,7 @@ class Sprint(models.Model):
 
     name = models.CharField(max_length=100, blank=True, default='')
     description = models.TextField(blank=True, default='')
-    end = models.DateField(unique=True)
+    end = models.DateField()
 
     def __str__(self):
         return self.name or _('Sprint ending %s') % self.end
